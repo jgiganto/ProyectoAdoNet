@@ -78,6 +78,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Buscar Empleados";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form03BuscadorEmpleadosCorrecto
             // 
@@ -93,6 +94,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form03BuscadorEmpleadosCorrecto";
             this.Text = "Form03BuscadorEmpleadosCorrecto";
+            this.Load += new System.EventHandler(this.Form03BuscadorEmpleadosCorrecto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

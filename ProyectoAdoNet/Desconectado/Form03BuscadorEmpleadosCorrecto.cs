@@ -62,14 +62,10 @@ namespace ProyectoAdoNet.Desconectado
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlParameter pamoficio = new SqlParameter();
-            pamoficio.Value = txtoficio.Text;
-            pamoficio.Direction = ParameterDirection.Output;
-            this.com.Parameters.Add(pamoficio);
-
-
-            String sql =
-                "SELECT * FROM EMP WHERE OFICIO = '" + pamoficio.Value.ToString() + "'";
+            String oficiotexto = this.txtoficio.Text;
+            SqlParameter pamofi = new SqlParameter("@OFICIO", oficiotexto);
+            this.com.Parameters.Add(pamofi);
+            String sql = "SELECT * FROM EMP WHERE OFICIO = @OFICIO";
             this.com.CommandType = CommandType.Text;
             this.com.CommandText = sql;
             this.ademp.SelectCommand = com;
@@ -79,7 +75,7 @@ namespace ProyectoAdoNet.Desconectado
             {
                 this.ds.Tables["EMP"].Rows.Clear();
             }
-            //this.ademp.Fill(this.ds, "EMP");
+            this.ademp.Fill(this.ds, "EMP");
             //pintar
             this.lstempleados.Items.Clear();
             foreach(DataRow f in ds.Tables["EMP"].Rows)
@@ -88,7 +84,7 @@ namespace ProyectoAdoNet.Desconectado
                 String apellido = f["APELLIDO"].ToString();
                 this.lstempleados.Items.Add(apellido + " - " + oficio);
             }
-            //this.com.Parameters.Clear();
+            this.com.Parameters.Clear();
         }
     }
 }

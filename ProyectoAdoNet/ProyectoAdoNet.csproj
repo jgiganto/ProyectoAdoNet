@@ -78,6 +78,12 @@
     <Compile Include="Desconectado\Form03BuscadorEmpleadosCorrecto.Designer.cs">
       <DependentUpon>Form03BuscadorEmpleadosCorrecto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Desconectado\Form04DepartamentosEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desconectado\Form04DepartamentosEmpleados.Designer.cs">
+      <DependentUpon>Form04DepartamentosEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Desconectado\FormBloc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\Form03BuscadorEmpleadosCorrecto.resx">
       <DependentUpon>Form03BuscadorEmpleadosCorrecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desconectado\Form04DepartamentosEmpleados.resx">
+      <DependentUpon>Form04DepartamentosEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\FormBloc.resx">
       <DependentUpon>FormBloc.cs</DependentUpon>

@@ -167,8 +167,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lsvdoctores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "btnmodificar";
+            this.Load += new System.EventHandler(this.btnmodificar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//prueba
 namespace ProyectoAdoNet.Desconectado
 {
     public partial class btnmodificar : Form
@@ -15,6 +15,11 @@ namespace ProyectoAdoNet.Desconectado
         public btnmodificar()
         {
             InitializeComponent();
+        }
+
+        private void btnmodificar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

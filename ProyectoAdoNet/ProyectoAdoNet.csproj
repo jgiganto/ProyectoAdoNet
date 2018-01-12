@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="Desconectado\Form04DepartamentosEmpleados.Designer.cs">
       <DependentUpon>Form04DepartamentosEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desconectado\Form05TablaCompletaHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desconectado\Form05TablaCompletaHospital.Designer.cs">
+      <DependentUpon>Form05TablaCompletaHospital.cs</DependentUpon>
     </Compile>
     <Compile Include="Desconectado\FormBloc.cs">
       <SubType>Form</SubType>
@@ -193,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\Form04DepartamentosEmpleados.resx">
       <DependentUpon>Form04DepartamentosEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desconectado\Form05TablaCompletaHospital.resx">
+      <DependentUpon>Form05TablaCompletaHospital.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\FormBloc.resx">
       <DependentUpon>FormBloc.cs</DependentUpon>

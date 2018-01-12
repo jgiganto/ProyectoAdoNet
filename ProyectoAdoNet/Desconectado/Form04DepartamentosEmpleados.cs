@@ -44,8 +44,26 @@ namespace ProyectoAdoNet.Desconectado
             }            
         }
 
-        private void CargarEmpleados()
+        private void BuscarEmpleados(int deptno)
         {
+            SqlParameter pamnum = new SqlParameter("@DEPTNO", deptno);
+            this.com.Parameters.Add(pamnum);
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = "SELECT * FROM EMP"
+            + "WHERE DEPT_NO = @DEPTNO";
+            if(this.ds.Tables.Contains("EMP"))
+            {
+                this.ds.Tables["EMP"].Rows.Clear();
+            }
+            this.adem.SelectCommand = this.com;
+            this.adem.Fill(this.ds, "EMP");
+            this.com.Parameters.Clear();
+            this.txtempleados.Items.Clear();
+            foreach(DataRow f in this.ds.Tables["EMP"].Rows)
+            {
+                this.txtempleados.Items.Add(f["APELLIDO"]);
+                
+            }
 
         }
 
@@ -67,6 +85,7 @@ namespace ProyectoAdoNet.Desconectado
                 string localidad = filadept["LOC"].ToString();
                 this.txtnombre.Text = nombre;
                 this.txtlocalidad.Text = localidad;
+              // this.BuscarEmpleados(num);
             }
         }
     }

@@ -98,7 +98,14 @@ namespace ProyectoAdoNet.Desconectado
         private void lsvhospitales_SelectedIndexChanged(object sender, EventArgs e)
         {
             //indice del elemento seleccionado
-            this.lsvhospitales.SelectedItems[0].Text;
+            //es obligatorio preguntar por la selccion del elemento
+            if(this.lsvhospitales.SelectedItems.Count != 0)
+            {
+                //recuperamos el codigo del hospital (tag)
+                int hospitalcod =
+                    int.Parse(this.lsvhospitales.SelectedItems[0].Tag.ToString());
+            }
+            
         }
     }
 }

@@ -126,9 +126,10 @@
             this.Controls.Add(this.btncargarempleados);
             this.Controls.Add(this.btncargardepartamento);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form01PrimerDataSet";
             this.Text = "Form01PrimerDataSet";
+            this.Load += new System.EventHandler(this.Form01PrimerDataSet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridtabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

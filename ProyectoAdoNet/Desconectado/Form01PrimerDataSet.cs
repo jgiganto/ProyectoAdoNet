@@ -68,5 +68,10 @@ namespace ProyectoAdoNet.Desconectado
             this.txtnumerodetablas.Text = this.ds.Tables.Count.ToString();
 
         }
+
+        private void Form01PrimerDataSet_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

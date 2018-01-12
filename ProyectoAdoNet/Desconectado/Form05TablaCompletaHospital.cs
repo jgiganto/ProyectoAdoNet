@@ -94,5 +94,11 @@ namespace ProyectoAdoNet.Desconectado
                 this.lsvhospitales.Items.Add(it);
             }
         }
+
+        private void lsvhospitales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //indice del elemento seleccionado
+            this.lsvhospitales.SelectedItems[0].Text;
+        }
     }
 }

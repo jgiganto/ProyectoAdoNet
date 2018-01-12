@@ -51,6 +51,7 @@
             this.lsvhospitales.TabIndex = 0;
             this.lsvhospitales.UseCompatibleStateImageBehavior = false;
             this.lsvhospitales.View = System.Windows.Forms.View.Details;
+            this.lsvhospitales.SelectedIndexChanged += new System.EventHandler(this.lsvhospitales_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -151,7 +152,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lsvhospitales);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form05TablaCompletaHospital";
             this.Text = "Form05TablaCompletaHospital";
             this.ResumeLayout(false);

@@ -17,7 +17,9 @@ namespace ProyectoAdoNet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form03BuscadorEmpleadosCorrecto());
+            Application.Run(new Form06ModeloCapas());
         }
     }
 }
+
+// this.cadenaconexion = @"Data Source=LOCALHOST\SQLTAJAMAR;Initial Catalog=HOSPITAL;User ID=SA";

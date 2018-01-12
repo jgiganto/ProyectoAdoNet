@@ -63,6 +63,7 @@
             this.lstdepartamentos.Name = "lstdepartamentos";
             this.lstdepartamentos.Size = new System.Drawing.Size(217, 259);
             this.lstdepartamentos.TabIndex = 1;
+            this.lstdepartamentos.SelectedIndexChanged += new System.EventHandler(this.lstdepartamentos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -76,7 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 401);
+            this.label3.Location = new System.Drawing.Point(225, 401);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 3;
@@ -86,14 +87,14 @@
             // 
             this.txtnombre.Location = new System.Drawing.Point(31, 433);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(100, 23);
+            this.txtnombre.Size = new System.Drawing.Size(133, 23);
             this.txtnombre.TabIndex = 4;
             // 
             // txtlocalidad
             // 
-            this.txtlocalidad.Location = new System.Drawing.Point(189, 433);
+            this.txtlocalidad.Location = new System.Drawing.Point(228, 433);
             this.txtlocalidad.Name = "txtlocalidad";
-            this.txtlocalidad.Size = new System.Drawing.Size(100, 23);
+            this.txtlocalidad.Size = new System.Drawing.Size(143, 23);
             this.txtlocalidad.TabIndex = 5;
             // 
             // label4
@@ -202,9 +203,10 @@
             this.Controls.Add(this.lstdepartamentos);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form04DepartamentosEmpleados";
             this.Text = "Form04DepartamentosEmpleados";
+            this.Load += new System.EventHandler(this.Form04DepartamentosEmpleados_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

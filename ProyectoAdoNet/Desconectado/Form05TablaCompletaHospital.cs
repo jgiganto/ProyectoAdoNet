@@ -32,12 +32,14 @@ namespace ProyectoAdoNet.Desconectado
         String conexion;
         SqlConnection cn;
         SqlCommand com;
+        SqlDataAdapter adhosp;
         DataSet ds;
 
 
         public Form05TablaCompletaHospital()
         {
             InitializeComponent();
+            this.button1.Click += Button1_Click;
             //PARA RECUPERAR CUALQUIER DATO DEL CONFIG 
             //SE USA LA CLASE ConfigurationManager
             //es case sensitive al recuperar los valores del key
@@ -49,14 +51,21 @@ namespace ProyectoAdoNet.Desconectado
             this.cn = new SqlConnection(this.conexion);
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
+            this.adhosp = new SqlDataAdapter();
             this.ds = new DataSet();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.CargarHospitales();
+        }
+
         private void CargarHospitales()
         {
             this.com.CommandType = CommandType.StoredProcedure;
             this.com.CommandText = "MOSTRARHOSPITALES";
             this.adhosp.SelectCommand = this.com;
-            if (this.ds.Tables.Contains["HOSPITAL"])
+            if (this.ds.Tables.Contains("HOSPITAL"))
             {
                 this.ds.Tables["HOSPITAL"].Rows.Clear();
             }

@@ -34,11 +34,14 @@
             // 
             // lsvhospitales
             // 
+            this.lsvhospitales.FullRowSelect = true;
+            this.lsvhospitales.HideSelection = false;
             this.lsvhospitales.Location = new System.Drawing.Point(25, 75);
             this.lsvhospitales.Name = "lsvhospitales";
             this.lsvhospitales.Size = new System.Drawing.Size(662, 362);
             this.lsvhospitales.TabIndex = 0;
             this.lsvhospitales.UseCompatibleStateImageBehavior = false;
+            this.lsvhospitales.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 

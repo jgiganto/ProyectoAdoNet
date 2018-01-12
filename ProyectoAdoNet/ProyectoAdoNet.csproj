@@ -91,12 +91,20 @@
     <Compile Include="Desconectado\Form05TablaCompletaHospital.Designer.cs">
       <DependentUpon>Form05TablaCompletaHospital.cs</DependentUpon>
     </Compile>
+    <Compile Include="Desconectado\Form06ModeloCapas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desconectado\Form06ModeloCapas.Designer.cs">
+      <DependentUpon>Form06ModeloCapas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Desconectado\FormBloc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Desconectado\FormBloc.Designer.cs">
       <DependentUpon>FormBloc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Desconectado\Modelos\Hospital.cs" />
+    <Compile Include="Desconectado\Modelos\ModeloSQLHospital.cs" />
     <Compile Include="Form05ModificarSalas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\Form05TablaCompletaHospital.resx">
       <DependentUpon>Form05TablaCompletaHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desconectado\Form06ModeloCapas.resx">
+      <DependentUpon>Form06ModeloCapas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\FormBloc.resx">
       <DependentUpon>FormBloc.cs</DependentUpon>

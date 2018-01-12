@@ -88,6 +88,7 @@ namespace ProyectoAdoNet.Desconectado
                 ListViewItem it = new ListViewItem();
                 //columna principal nombre
                 it.Text = f["NOMBRE"].ToString();
+                it.Tag = f["HOSPITAL_COD"].ToString();
                 //SUNITEMS POR CADA COLUMNA AÑADIDA, DIRECCION
                 it.SubItems.Add(f["DIRECCION"].ToString());
                 //AÑADIMOS EL ITEM AL LISTVIEW
@@ -104,8 +105,33 @@ namespace ProyectoAdoNet.Desconectado
                 //recuperamos el codigo del hospital (tag)
                 int hospitalcod =
                     int.Parse(this.lsvhospitales.SelectedItems[0].Tag.ToString());
+                this.BuscarHospital(hospitalcod);
             }
             
+        }
+        private void BuscarHospital(int hospitalcod)
+        {
+            SqlParameter pamcod =
+               new SqlParameter("@HOSPITALCOD", hospitalcod);
+            this.com.Parameters.Add(pamcod);
+            this.com.CommandType = CommandType.StoredProcedure;
+            this.com.CommandText = "DATOSHOSPITAL";
+            this.adhosp.SelectCommand = this.com;
+            if (this.ds.Tables.Contains("HOSPITAL"))
+            {
+                this.ds.Tables["HOSPITAL"].Rows.Clear();
+            }
+            this.adhosp.Fill(this.ds, "HOSPITAL");
+            this.com.Parameters.Clear();
+            DataRow filahosp = ds.Tables["HOSPITAL"].Rows[0];
+            this.txtnombre.Text = filahosp["NOMBRE"].ToString();
+            this.txtdireccion.Text = filahosp["DIRECCION"].ToString();
+            this.txttelefono.Text = filahosp["TELEFONO"].ToString();
+            this.txtcamas.Text = filahosp["NUM_CAMA"].ToString();
+        }
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

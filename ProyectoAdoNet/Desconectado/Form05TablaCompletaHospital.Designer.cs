@@ -39,6 +39,7 @@
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtcamas = new System.Windows.Forms.TextBox();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsvhospitales
@@ -64,7 +65,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(236, 307);
+            this.button1.Location = new System.Drawing.Point(127, 309);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 54);
             this.button1.TabIndex = 2;
@@ -135,11 +136,22 @@
             this.txtcamas.Size = new System.Drawing.Size(100, 22);
             this.txtcamas.TabIndex = 10;
             // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Location = new System.Drawing.Point(316, 309);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(148, 54);
+            this.btnbuscar.TabIndex = 11;
+            this.btnbuscar.Text = "Buscar Hospitales";
+            this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
             // Form05TablaCompletaHospital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 585);
+            this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txtcamas);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txttelefono);
@@ -173,5 +185,6 @@
         private System.Windows.Forms.TextBox txttelefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtcamas;
+        private System.Windows.Forms.Button btnbuscar;
     }
 }

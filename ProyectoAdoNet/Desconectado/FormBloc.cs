@@ -16,5 +16,10 @@ namespace ProyectoAdoNet.Desconectado
         {
             InitializeComponent();
         }
+
+        private void txtdatos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

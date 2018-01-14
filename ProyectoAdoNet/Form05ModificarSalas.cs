@@ -21,7 +21,7 @@ namespace ProyectoAdoNet
         {
             InitializeComponent();
             //instanciamos los objetos
-            this.cadenaconexion = @"Data Source=LOCALHOST\SQLTAJAMAR;Initial Catalog=HOSPITAL;User ID=SA";
+            this.cadenaconexion = @"Data Source=DESKTOP-64C2FJI;Initial Catalog=HOSPITAL;Integrated Security=True";
             this.cn = new SqlConnection(this.cadenaconexion);
             this.com = new SqlCommand();
             this.CargarSalas();//llamamos a cargar salas. 

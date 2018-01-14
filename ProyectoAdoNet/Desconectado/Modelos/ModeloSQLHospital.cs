@@ -7,6 +7,20 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
+#region PROC ALMACENADOS
+/*CREATE PROCEDURE MOSTRARHOSPITALES
+(@HOSPITALCOD int)
+AS
+SELECT * FROM HOSPITAL
+WHERE HOSPITAL_COD = @HOSPITALCOD
+GO
+
+CREATE PROCEDURE DATOSHOSPITAL
+AS
+SELECT * FROM HOSPITAL
+GO*/
+#endregion
+
 namespace ProyectoAdoNet.Desconectado.Modelos
 {
     public class ModeloSQLHospital
@@ -19,7 +33,7 @@ namespace ProyectoAdoNet.Desconectado.Modelos
         public ModeloSQLHospital()
         {
             this.cadenaconexion = 
-                ConfigurationManager.ConnectionStrings["tajamar"].ConnectionString;
+                ConfigurationManager.ConnectionStrings["casa"].ConnectionString;
             this.cn = new SqlConnection(this.cadenaconexion);
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
@@ -31,7 +45,7 @@ namespace ProyectoAdoNet.Desconectado.Modelos
         public List<Hospital> GetHospitales()
         {
             this.com.CommandType = CommandType.StoredProcedure;
-            this.com.CommandText = "MOSTRARHOSPITALES";
+            this.com.CommandText = "DATOSHOSPITAL";
             this.adhosp.SelectCommand = this.com;
 
             if (this.ds.Tables.Contains("HOSPITAL"))
@@ -61,7 +75,7 @@ namespace ProyectoAdoNet.Desconectado.Modelos
             SqlParameter pamcod = new SqlParameter("@HOSPITALCOD", hospitalcod);
             this.com.Parameters.Add(pamcod);
             this.com.CommandType = CommandType.StoredProcedure;
-            this.com.CommandText = "DATOSHOSPITAL";
+            this.com.CommandText = "MOSTRARHOSPITALES";
             this.adhosp.SelectCommand = this.com;
             if (this.ds.Tables.Contains("HOSPITAL"))
             {

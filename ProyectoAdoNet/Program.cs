@@ -17,7 +17,7 @@ namespace ProyectoAdoNet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form06ModeloCapas());
+            Application.Run(new Form07Doctores());
         }
     }
 }

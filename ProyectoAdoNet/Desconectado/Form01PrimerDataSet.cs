@@ -20,7 +20,7 @@ namespace ProyectoAdoNet.Desconectado
         public Form01PrimerDataSet()
         {
             InitializeComponent();
-            this.cadenaconexion = @"Data Source=LOCALHOST\SQLTAJAMAR;Initial Catalog=HOSPITAL;User ID=SA";
+            this.cadenaconexion = @"Data Source=DESKTOP-64C2FJI;Initial Catalog=HOSPITAL;Integrated Security=True";
                 this.ds = new DataSet();
         }
 

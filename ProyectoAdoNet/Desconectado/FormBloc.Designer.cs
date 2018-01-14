@@ -39,6 +39,7 @@
             this.txtdatos.Size = new System.Drawing.Size(716, 543);
             this.txtdatos.TabIndex = 0;
             this.txtdatos.Text = "";
+            this.txtdatos.TextChanged += new System.EventHandler(this.txtdatos_TextChanged);
             // 
             // FormBloc
             // 
@@ -47,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(716, 543);
             this.Controls.Add(this.txtdatos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormBloc";
             this.Text = "FormBloc";
             this.ResumeLayout(false);

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoAdoNet.Desconectado;
-using ProyectoAdoNet.Desconectado.Modelos;
+    using ProyectoAdoNet.Desconectado;
+    using ProyectoAdoNet.Desconectado.Modelos;
 
 namespace ProyectoAdoNet.Desconectado
 {

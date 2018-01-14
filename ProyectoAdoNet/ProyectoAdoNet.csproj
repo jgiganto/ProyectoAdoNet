@@ -97,19 +97,15 @@
     <Compile Include="Desconectado\Form06ModeloCapas.Designer.cs">
       <DependentUpon>Form06ModeloCapas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Desconectado\Form07Doctores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Desconectado\Form07Doctores.Designer.cs">
-      <DependentUpon>Form07Doctores.cs</DependentUpon>
-    </Compile>
     <Compile Include="Desconectado\FormBloc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Desconectado\FormBloc.Designer.cs">
       <DependentUpon>FormBloc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Desconectado\Modelos\Doctor.cs" />
     <Compile Include="Desconectado\Modelos\Hospital.cs" />
+    <Compile Include="Desconectado\Modelos\ModeloSqlDoctor.cs" />
     <Compile Include="Desconectado\Modelos\ModeloSQLHospital.cs" />
     <Compile Include="Form05ModificarSalas.cs">
       <SubType>Form</SubType>
@@ -122,6 +118,12 @@
     </Compile>
     <Compile Include="Form06PlantillaHospital.Designer.cs">
       <DependentUpon>Form06PlantillaHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desconectado\Form07Doctores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desconectado\Form07Doctores.Designer.cs">
+      <DependentUpon>Form07Doctores.cs</DependentUpon>
     </Compile>
     <Compile Include="Form07PlantillaHopistalMejorado.cs">
       <SubType>Form</SubType>
@@ -221,9 +223,6 @@
     <EmbeddedResource Include="Desconectado\Form06ModeloCapas.resx">
       <DependentUpon>Form06ModeloCapas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Desconectado\Form07Doctores.resx">
-      <DependentUpon>Form07Doctores.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Desconectado\FormBloc.resx">
       <DependentUpon>FormBloc.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form06PlantillaHospital.resx">
       <DependentUpon>Form06PlantillaHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desconectado\Form07Doctores.resx">
+      <DependentUpon>Form07Doctores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form07PlantillaHopistalMejorado.resx">
       <DependentUpon>Form07PlantillaHopistalMejorado.cs</DependentUpon>

@@ -30,7 +30,17 @@ AS
  SALARIO = @SALARIO
  WHERE DOCTOR_NO = @DOCTORNO
  SELECT * FROM DOCTOR    
-GO*/
+GO*//*
+PRUEBAS EJECUCION---------------------------
+ EXEC MODIFICARDOCTOR 386,22,'Jackson M','Baile',2678000
+
+/*HOSPITAL_COD
+DOCTOR_NO
+APELLIDO
+ESPECIALIDAD
+SALARIO
+*/
+     
 #endregion
 
 namespace ProyectoAdoNet.Desconectado.Modelos

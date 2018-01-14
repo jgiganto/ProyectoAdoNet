@@ -53,7 +53,38 @@ namespace ProyectoAdoNet
                 this.txtespecialidad.Text = doctor.Especialidad;
                 this.txtsalario.Text = doctor.Salario.ToString();
                 this.txthospital.Text = doctor.HospitalCod;
+                //para la funcionalidad de modificar
+                this.lsvdoctores.Tag = codigo.ToString();
+
             }
+        }
+        
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+           
+            Doctor doctororiginal = new Doctor();
+            Doctor doctormodificado = new Doctor();
+            doctororiginal.Apellido = this.txtapellido.Text;
+            doctororiginal.Especialidad = this.txtespecialidad.Text;
+            doctororiginal.Salario = int.Parse(this.txtsalario.Text);
+            doctororiginal.HospitalCod = this.txthospital.Text;
+            String numdoc = this.lsvdoctores.Tag.ToString();
+            doctororiginal.DoctorNo = numdoc;
+            this.txtapellido.Text = "";
+            this.txtespecialidad.Text = "";
+            this.txtsalario.Text = "0";
+            this.txthospital.Text = "";
+            //llamada a ModificarDoctor
+            doctormodificado =  modelo.ModificarDoctor(doctororiginal);
+            //pintar
+            this.lsvdoctores.Items.Clear();
+            this.CargarDoctores();
+            this.txtapellido.Text = doctormodificado.Apellido;
+            this.txtespecialidad.Text = doctormodificado.Especialidad;
+            this.txtsalario.Text = doctormodificado.Salario.ToString();
+            this.txthospital.Text = doctormodificado.HospitalCod;
+
         }
     }
 }

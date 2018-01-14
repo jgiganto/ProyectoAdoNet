@@ -60,6 +60,7 @@
             this.btnmodificar.TabIndex = 43;
             this.btnmodificar.Text = "MODIFICAR";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // txthospital
             // 

@@ -20,8 +20,8 @@ SELECT * FROM DOCTOR
 WHERE DOCTOR_NO = @DOCTORNO
 GO
 
-CREATE PROCEDURE MODIFICARDOCTOR
-(@DOCTORNO NVARCHAR(10),@HOSPITALCOD NVARCHAR(10) OUT, @APELLIDO NVARCHAR(20) OUT, @ESPECIALIDAD NVARCHAR(20) OUT,@SALARIO INT OUT)
+alter PROCEDURE MODIFICARDOCTOR
+(@HOSPITALCOD NVARCHAR(10), @APELLIDO NVARCHAR(20) OUT,@ESPECIALIDAD NVARCHAR(20) OUT ,@SALARIO INT OUT,@DOCTORNO NVARCHAR(10))
 AS
  UPDATE DOCTOR 
  SET HOSPITAL_COD = @HOSPITALCOD,
@@ -30,7 +30,8 @@ AS
  SALARIO = @SALARIO
  WHERE DOCTOR_NO = @DOCTORNO
  SELECT * FROM DOCTOR    
-GO*//*
+GO
+
 PRUEBAS EJECUCION---------------------------
  EXEC MODIFICARDOCTOR 386,22,'Jackson M','Baile',2678000
 
@@ -40,7 +41,7 @@ APELLIDO
 ESPECIALIDAD
 SALARIO
 */
-     
+
 #endregion
 
 namespace ProyectoAdoNet.Desconectado.Modelos
@@ -118,6 +119,38 @@ namespace ProyectoAdoNet.Desconectado.Modelos
         }
 
         //metodo para modificar doctores
+        public Doctor ModificarDoctor(Doctor doctoramodificar)
+        {
+            //(@HOSPITALCOD NVARCHAR(10), @APELLIDO NVARCHAR(20) OUT,@ESPECIALIDAD NVARCHAR(20) OUT ,@SALARIO INT OUT,@DOCTORNO NVARCHAR(10))
+            SqlParameter pamdocno = new SqlParameter("@DOCTORNO", doctoramodificar.DoctorNo.ToString());
+            SqlParameter pamdocapellido = new SqlParameter("@APELLIDO", doctoramodificar.Apellido.ToString());
+            SqlParameter pamdocespecialidad = new SqlParameter("@ESPECIALIDAD", doctoramodificar.Especialidad.ToString());
+            SqlParameter pamdocesalario = new SqlParameter("@SALARIO", int.Parse(doctoramodificar.Salario.ToString()));
+            SqlParameter pamdochospitalcod = new SqlParameter("@HOSPITALCOD", doctoramodificar.HospitalCod.ToString());
+            this.com.Parameters.Add(pamdochospitalcod);
+            this.com.Parameters.Add(pamdocapellido);
+            this.com.Parameters.Add(pamdocespecialidad);
+            this.com.Parameters.Add(pamdocesalario);
+            this.com.Parameters.Add(pamdocno);
+            this.com.CommandType = CommandType.StoredProcedure;
+            this.com.CommandText = "MODIFICARDOCTOR";
+            this.addoc.SelectCommand = this.com;
+            //limpiar
+            if (this.ds.Tables.Contains("DOCTOR"))
+            {
+                this.ds.Tables["DOCTOR"].Rows.Clear();
+            }
+            this.addoc.Fill(this.ds, "DOCTOR");
+            this.com.Parameters.Clear();
+            DataRow fila = this.ds.Tables["DOCTOR"].Rows[0];
+            Doctor doctormodificado = new Doctor();
+            doctormodificado.Apellido = fila["APELLIDO"].ToString();
+            doctormodificado.DoctorNo = fila["DOCTOR_NO"].ToString();
+            doctormodificado.Especialidad = fila["ESPECIALIDAD"].ToString();
+            doctormodificado.HospitalCod = fila["HOSPITAL_COD"].ToString();
+            doctormodificado.Salario = int.Parse(fila["SALARIO"].ToString());
+            return doctormodificado;
+        }
 
 
     }
@@ -128,4 +161,17 @@ DOCTOR_NO
 APELLIDO
 ESPECIALIDAD
 SALARIO
+alter PROCEDURE MODIFICARDOCTOR
+(@HOSPITALCOD NVARCHAR(10), @APELLIDO NVARCHAR(20) OUT,@ESPECIALIDAD NVARCHAR(20) OUT ,@SALARIO INT OUT,@DOCTORNO NVARCHAR(10))
+AS
+ UPDATE DOCTOR 
+ SET HOSPITAL_COD = @HOSPITALCOD,
+ APELLIDO = @APELLIDO,
+ ESPECIALIDAD = @ESPECIALIDAD,
+ SALARIO = @SALARIO
+ WHERE DOCTOR_NO = @DOCTORNO
+ SELECT * FROM DOCTOR    
+GO
+
+EXEC MODIFICARDOCTOR 22,'Jackson M','Baile',2678000,453
 */

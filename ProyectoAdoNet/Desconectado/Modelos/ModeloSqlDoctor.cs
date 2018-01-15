@@ -56,7 +56,7 @@ namespace ProyectoAdoNet.Desconectado.Modelos
 
         public ModeloSqlDoctor()
         {
-            this.cadenaconexion = ConfigurationManager.ConnectionStrings["casa"].ConnectionString;
+            this.cadenaconexion = ConfigurationManager.ConnectionStrings["tajamar"].ConnectionString;
             this.cn = new SqlConnection(this.cadenaconexion);
             this.com = new SqlCommand();
             this.com.Connection = this.cn;
